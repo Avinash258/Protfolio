@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Pushanshu Avinash Sharma — QA Automation Architect with 9+ years of experience in Playwright, Tosca, Selenium, AI Testing, and Azure DevOps.">
+<meta name="author" content="Pushanshu Avinash Sharma">
+<title>Pushanshu Avinash Sharma — QA Automation Architect</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #0a0a0a;
+    --ink2: #3a3a3a;
+    --ink3: #6e6e6e;
+    --paper: #f7f5f0;
+    --paper2: #efece5;
+    --accent: #1a3cff;
+    --accent2: #ff3c1a;
+    --gold: #c9a84c;
+    --border: rgba(10,10,10,0.12);
+    --font-disp: 'Syne', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+    --font-mono: 'DM Mono', monospace;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 15px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 3rem;
+    height: 64px;
+    background: rgba(247,245,240,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    font-family: var(--font-disp);
+    font-weight: 800;
+    font-size: 16px;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--ink3);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+  .nav-cta {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 8px 20px;
+    background: var(--ink);
+    color: var(--paper);
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--accent); }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 64px;
+  }
+  .hero-left {
+    padding: 80px 3rem 80px 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: 1px solid var(--border);
+  }
+  .hero-tag {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .hero-tag::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: var(--accent);
+  }
+  h1 {
+    font-family: var(--font-disp);
+    font-weight: 800;
+    font-size: clamp(48px, 5vw, 80px);
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    margin-bottom: 2rem;
+  }
+  h1 span { color: var(--accent); }
+  .hero-desc {
+    font-size: 16px;
+    color: var(--ink2);
+    max-width: 460px;
+    line-height: 1.7;
+    margin-bottom: 3rem;
+  }
+  .hero-btns { display: flex; gap: 1rem; }
+  .btn-primary {
+    padding: 14px 28px;
+    background: var(--ink);
+    color: var(--paper);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.2s;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: var(--accent); }
+  .btn-outline {
+    padding: 14px 28px;
+    border: 1px solid var(--border);
+    color: var(--ink);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: border-color 0.2s, color 0.2s;
+    display: inline-block;
+  }
+  .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+  .hero-right {
+    padding: 80px 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--paper2);
+  }
+  .stat-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-bottom: 3rem;
+  }
+  .stat-cell {
+    background: var(--paper2);
+    padding: 2rem;
+  }
+  .stat-num {
+    font-family: var(--font-disp);
+    font-size: 52px;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+  }
+  .stat-num sup { font-size: 24px; color: var(--accent); }
+  .stat-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink3);
+    margin-top: 4px;
+  }
+  .cert-strip {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .cert-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    background: var(--paper);
+    border: 1px solid var(--border);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--ink2);
+  }
+  .cert-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+
+  /* ── SECTIONS ── */
+  section { padding: 100px 3rem; }
+  .section-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink3);
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+  h2 {
+    font-family: var(--font-disp);
+    font-weight: 700;
+    font-size: clamp(32px, 3.5vw, 52px);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.5rem;
+  }
+
+  /* ── SKILLS ── */
+  #skills { background: var(--ink); color: var(--paper); }
+  #skills .section-label { color: rgba(247,245,240,0.4); }
+  #skills .section-label::after { background: rgba(247,245,240,0.15); }
+  #skills h2 { color: var(--paper); }
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: rgba(247,245,240,0.08);
+    border: 1px solid rgba(247,245,240,0.08);
+    margin-top: 3rem;
+  }
+  .skill-group {
+    background: var(--ink);
+    padding: 2rem;
+  }
+  .skill-group-title {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.2rem;
+  }
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .skill-tag {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    padding: 5px 10px;
+    border: 1px solid rgba(247,245,240,0.15);
+    color: rgba(247,245,240,0.75);
+  }
+
+  /* ── PROJECTS ── */
+  #projects { background: var(--paper2); }
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+  .project-card {
+    background: var(--paper2);
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.2s;
+  }
+  .project-card:hover { background: var(--paper); }
+  .project-num {
+    font-family: var(--font-disp);
+    font-size: 72px;
+    font-weight: 800;
+    color: rgba(10,10,10,0.06);
+    line-height: 1;
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    letter-spacing: -0.04em;
+    pointer-events: none;
+  }
+  .project-domain {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent2);
+    margin-bottom: 1rem;
+  }
+  .project-title {
+    font-family: var(--font-disp);
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+    color: var(--ink);
+  }
+  .project-desc {
+    font-size: 14px;
+    color: var(--ink2);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+  .project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .tech-tag {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    padding: 4px 8px;
+    background: var(--paper);
+    border: 1px solid var(--border);
+    color: var(--ink3);
+    letter-spacing: 0.06em;
+  }
+  #projects .project-card:hover .tech-tag { background: var(--paper2); }
+
+  /* ── EXPERIENCE ── */
+  .exp-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 4rem;
+    margin-top: 3rem;
+  }
+  .exp-company {
+    font-family: var(--font-disp);
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .exp-role {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--accent);
+    letter-spacing: 0.06em;
+    margin-bottom: 1rem;
+  }
+  .exp-tenure {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--ink3);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 8px 12px;
+    background: var(--paper2);
+    border-left: 3px solid var(--accent);
+    margin-bottom: 1.5rem;
+  }
+  .exp-domains {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .domain-pill {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    padding: 4px 10px;
+    background: var(--ink);
+    color: var(--paper);
+    letter-spacing: 0.04em;
+  }
+  .exp-item {
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+  .exp-item:first-child { padding-top: 0; }
+  .exp-icon {
+    width: 32px; height: 32px;
+    background: var(--accent);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .exp-icon svg { fill: white; }
+  .exp-text { flex: 1; }
+  .exp-item-title {
+    font-family: var(--font-disp);
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    letter-spacing: -0.01em;
+  }
+  .exp-item-desc {
+    font-size: 14px;
+    color: var(--ink2);
+    line-height: 1.6;
+  }
+
+  /* ── ABOUT ── */
+  #about { background: var(--paper2); }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+    margin-top: 3rem;
+  }
+  .about-text p {
+    font-size: 16px;
+    color: var(--ink2);
+    line-height: 1.75;
+    margin-bottom: 1.25rem;
+  }
+  .cert-card {
+    padding: 1.2rem 1.5rem;
+    border: 1px solid var(--border);
+    background: var(--paper);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .cert-badge {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    padding: 3px 8px;
+    background: var(--gold);
+    color: var(--ink);
+    letter-spacing: 0.06em;
+    flex-shrink: 0;
+  }
+  .cert-name {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.4;
+  }
+
+  /* ── CONTACT ── */
+  #contact { background: var(--ink); color: var(--paper); }
+  #contact .section-label { color: rgba(247,245,240,0.35); }
+  #contact .section-label::after { background: rgba(247,245,240,0.1); }
+  #contact h2 { color: var(--paper); }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-top: 3rem;
+  }
+  .contact-info p {
+    font-size: 15px;
+    color: rgba(247,245,240,0.65);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+  .contact-links { display: flex; flex-direction: column; gap: 10px; }
+  .contact-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: rgba(247,245,240,0.75);
+    text-decoration: none;
+    padding: 12px 16px;
+    border: 1px solid rgba(247,245,240,0.1);
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .contact-link:hover { border-color: var(--accent); color: var(--paper); }
+  .contact-link-icon {
+    width: 20px; height: 20px;
+    background: rgba(247,245,240,0.08);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 10px; color: var(--accent);
+    flex-shrink: 0;
+  }
+  .contact-form-area p {
+    font-size: 24px;
+    font-family: var(--font-disp);
+    font-weight: 700;
+    color: var(--paper);
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+  }
+  .contact-form-area p span { color: var(--accent); }
+  .avail-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 1.5rem;
+    padding: 8px 16px;
+    border: 1px solid rgba(100,220,140,0.3);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: #64dc8c;
+    text-transform: uppercase;
+  }
+  .avail-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: #64dc8c;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 2rem 3rem;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-copy {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--ink3);
+    letter-spacing: 0.06em;
+  }
+
+  /* ── SCROLL ANIMATIONS ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (max-width: 900px) {
+    #hero { grid-template-columns: 1fr; }
+    .hero-right { border-top: 1px solid var(--border); }
+    .skills-grid { grid-template-columns: 1fr; }
+    .projects-grid { grid-template-columns: 1fr; }
+    .exp-layout { grid-template-columns: 1fr; gap: 2rem; }
+    .about-grid { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; }
+    nav { padding: 0 1.5rem; }
+    .nav-links { display: none; }
+    section { padding: 60px 1.5rem; }
+    .hero-left, .hero-right { padding: 60px 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">P.A. Sharma</a>
+  <ul class="nav-links">
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#achievements">Achievements</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="mailto:your-email@example.com" class="nav-cta">Hire Me</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left">
+    <div class="hero-tag">QA Automation Architect · Bhopal, India</div>
+    <h1>Pushanshu<br><span>Avinash</span><br>Sharma</h1>
+    <p class="hero-desc">I architect enterprise-grade test automation frameworks — scaling quality across UI, API, Mobile, and Data layers. Playwright · Tosca · Selenium · AI Testing · Azure DevOps.</p>
+    <div class="hero-btns">
+      <a href="#projects" class="btn-primary">View Work</a>
+      <a href="#contact" class="btn-outline">Get in Touch</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="stat-grid">
+      <div class="stat-cell">
+        <div class="stat-num">9<sup>+</sup></div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">6<sup>+</sup></div>
+        <div class="stat-label">Key Projects</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">4</div>
+        <div class="stat-label">Domains</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">9<sup>+</sup></div>
+        <div class="stat-label">Certifications</div>
+      </div>
+    </div>
+    <div class="cert-strip">
+      <div class="cert-item"><div class="cert-dot"></div>Azure Solutions Architect Expert · Feb 2026</div>
+      <div class="cert-item"><div class="cert-dot"></div>AZ-104 Azure Administrator Associate · Mar 2025</div>
+      <div class="cert-item"><div class="cert-dot"></div>AZ-204 Azure Developer Associate · Jun 2025</div>
+      <div class="cert-item"><div class="cert-dot"></div>ATAGTR2025 Speaker — Agile Testing Alliance · Oct 2025</div>
+      <div class="cert-item"><div class="cert-dot"></div>Tricentis Tosca Certified Specialist</div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-label">Technical Stack</div>
+  <h2>Core Competencies</h2>
+  <div class="skills-grid reveal">
+    <div class="skill-group">
+      <div class="skill-group-title">Automation &amp; Frameworks</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Playwright</span>
+        <span class="skill-tag">Selenium</span>
+        <span class="skill-tag">Tosca</span>
+        <span class="skill-tag">Appium</span>
+        <span class="skill-tag">TestNG</span>
+        <span class="skill-tag">Cucumber</span>
+        <span class="skill-tag">Postman</span>
+        <span class="skill-tag">BDD/TDD</span>
+        <span class="skill-tag">POM</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">CI/CD &amp; DevOps</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Azure DevOps</span>
+        <span class="skill-tag">Jenkins</span>
+        <span class="skill-tag">GitHub Actions</span>
+        <span class="skill-tag">GitLab CI</span>
+        <span class="skill-tag">Docker</span>
+        <span class="skill-tag">Git</span>
+        <span class="skill-tag">JIRA</span>
+        <span class="skill-tag">AWS</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Languages</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Java</span>
+        <span class="skill-tag">JavaScript</span>
+        <span class="skill-tag">TypeScript</span>
+        <span class="skill-tag">SQL</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Database &amp; API</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Oracle</span>
+        <span class="skill-tag">MySQL</span>
+        <span class="skill-tag">PostgreSQL</span>
+        <span class="skill-tag">MongoDB</span>
+        <span class="skill-tag">REST API</span>
+        <span class="skill-tag">GraphQL</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Performance &amp; Security</div>
+      <div class="skill-tags">
+        <span class="skill-tag">JMeter</span>
+        <span class="skill-tag">Burp Suite</span>
+        <span class="skill-tag">OWASP</span>
+        <span class="skill-tag">Security Testing</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">AI for QA</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Playwright MCP</span>
+        <span class="skill-tag">Local LLM</span>
+        <span class="skill-tag">Agentic AI</span>
+        <span class="skill-tag">AI Test Gen</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-label">Portfolio</div>
+  <h2>Key Projects</h2>
+  <div class="projects-grid">
+
+    <div class="project-card reveal">
+      <div class="project-num">01</div>
+      <div class="project-domain">AI Testing</div>
+      <div class="project-title">VotalAI — AI-Based Testing with Playwright MCP</div>
+      <div class="project-desc">Implemented AI-driven test automation using Playwright MCP and local LLMs, enabling intelligent test generation and self-healing automation for complex UI workflows.</div>
+      <div class="project-tech">
+        <span class="tech-tag">Playwright</span>
+        <span class="tech-tag">MCP</span>
+        <span class="tech-tag">Local LLM</span>
+        <span class="tech-tag">TypeScript</span>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-num">02</div>
+      <div class="project-domain">Recruitment</div>
+      <div class="project-title">Ludi Automation — Hybrid Low-Code Framework</div>
+      <div class="project-desc">Led full test automation using AssureIT, a scalable hybrid framework inspired by CITS, supporting traditional coding and low-code/no-code scenarios with GitHub Actions integration.</div>
+      <div class="project-tech">
+        <span class="tech-tag">AssureIT</span>
+        <span class="tech-tag">CITS</span>
+        <span class="tech-tag">GitHub Actions</span>
+        <span class="tech-tag">Low-Code</span>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-num">03</div>
+      <div class="project-domain">Enterprise / Finance</div>
+      <div class="project-title">Deloitte DWH-DESC — Tosca UI/API Automation</div>
+      <div class="project-desc">Delivered TOSCA-based UI and API automation with stored procedure validation for data warehouse systems at Deloitte, ensuring end-to-end data integrity across enterprise reporting.</div>
+      <div class="project-tech">
+        <span class="tech-tag">Tosca</span>
+        <span class="tech-tag">SQL</span>
+        <span class="tech-tag">API Testing</span>
+        <span class="tech-tag">DWH</span>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-num">04</div>
+      <div class="project-domain">IoT</div>
+      <div class="project-title">Smart Office — IoT CI/CD Automation</div>
+      <div class="project-desc">Designed end-to-end automation for an IoT Smart Office platform with MongoDB validations, Jenkins CI/CD integration, and Agile sprint implementation for real-time data pipelines.</div>
+      <div class="project-tech">
+        <span class="tech-tag">Jenkins</span>
+        <span class="tech-tag">MongoDB</span>
+        <span class="tech-tag">IoT</span>
+        <span class="tech-tag">Agile</span>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-num">05</div>
+      <div class="project-domain">Healthcare</div>
+      <div class="project-title">Anthem Inc. — Workflow &amp; SQL Migration Testing</div>
+      <div class="project-desc">Automated healthcare workflow validation and SQL migration testing for Anthem Inc., ensuring data correctness, compliance, and zero-defect production releases.</div>
+      <div class="project-tech">
+        <span class="tech-tag">Selenium</span>
+        <span class="tech-tag">SQL</span>
+        <span class="tech-tag">Java</span>
+        <span class="tech-tag">Azure DevOps</span>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-num">06</div>
+      <div class="project-domain">Tech / Security</div>
+      <div class="project-title">Dice.com — Performance &amp; Security Testing</div>
+      <div class="project-desc">Implemented Selenium-POM automation paired with OWASP security testing and JMeter performance testing for the Dice.com recruitment platform, hardening quality before high-traffic releases.</div>
+      <div class="project-tech">
+        <span class="tech-tag">Selenium</span>
+        <span class="tech-tag">JMeter</span>
+        <span class="tech-tag">OWASP</span>
+        <span class="tech-tag">Burp Suite</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-label">Career</div>
+  <h2>Work Experience</h2>
+  <div class="exp-layout">
+    <div class="exp-sidebar reveal">
+      <div class="exp-company">NewVision Software Pvt. Ltd.</div>
+      <div class="exp-role">QA Automation Lead / Architect</div>
+      <div class="exp-tenure">Jan 2016 – Present · 9+ Years</div>
+      <div style="font-size:13px; color: var(--ink3); margin-bottom: 1rem;">Bhopal, India</div>
+      <div class="exp-domains">
+        <span class="domain-pill">Healthcare</span>
+        <span class="domain-pill">IoT</span>
+        <span class="domain-pill">Recruitment</span>
+        <span class="domain-pill">Blockchain</span>
+        <span class="domain-pill">Enterprise</span>
+      </div>
+    </div>
+    <div class="exp-content">
+      <div class="exp-item reveal">
+        <div class="exp-icon">
+          <svg viewBox="0 0 16 16" width="14" height="14"><path d="M8 1L10 6H15L11 9.5L12.5 14.5L8 11.5L3.5 14.5L5 9.5L1 6H6Z"/></svg>
+        </div>
+        <div class="exp-text">
+          <div class="exp-item-title">Framework Architecture</div>
+          <div class="exp-item-desc">Designed scalable automation frameworks using TOSCA, Selenium, Appium, TestNG, and Cucumber across multi-domain projects spanning UI, API, Mobile, DB, and integration layers.</div>
+        </div>
+      </div>
+      <div class="exp-item reveal">
+        <div class="exp-icon">
+          <svg viewBox="0 0 16 16" width="14" height="14"><path d="M2 2h12v2H2zm0 4h12v2H2zm0 4h8v2H2z"/></svg>
+        </div>
+        <div class="exp-text">
+          <div class="exp-item-title">CI/CD Pipeline Integration</div>
+          <div class="exp-item-desc">Built and maintained quality gates in Azure DevOps, Jenkins, and GitHub Actions, reducing regression cycles and enabling continuous testing in fast-paced Agile delivery.</div>
+        </div>
+      </div>
+      <div class="exp-item reveal">
+        <div class="exp-icon">
+          <svg viewBox="0 0 16 16" width="14" height="14"><path d="M8 1a7 7 0 100 14A7 7 0 008 1zm1 10H7V7h2v4zm0-6H7V3h2v2z"/></svg>
+        </div>
+        <div class="exp-text">
+          <div class="exp-item-title">AI-First Testing Innovation</div>
+          <div class="exp-item-desc">Pioneered Playwright MCP + Local LLM based testing concepts, exploring next-generation agentic automation and AI-assisted test generation for complex enterprise systems.</div>
+        </div>
+      </div>
+      <div class="exp-item reveal">
+        <div class="exp-icon">
+          <svg viewBox="0 0 16 16" width="14" height="14"><path d="M3 1h10a2 2 0 012 2v2H1V3a2 2 0 012-2zm-2 6h14v6a2 2 0 01-2 2H3a2 2 0 01-2-2V7z"/></svg>
+        </div>
+        <div class="exp-text">
+          <div class="exp-item-title">Team Leadership &amp; Mentoring</div>
+          <div class="exp-item-desc">Led and mentored QA teams, established coding and testing standards, collaborated with cross-functional stakeholders, and drove quality culture across engineering departments.</div>
+        </div>
+      </div>
+      <div class="exp-item reveal">
+        <div class="exp-icon">
+          <svg viewBox="0 0 16 16" width="14" height="14"><path d="M1 3h14v2H1zm2 4h10v2H3zm2 4h6v2H5z"/></svg>
+        </div>
+        <div class="exp-text">
+          <div class="exp-item-title">Performance &amp; Security Testing</div>
+          <div class="exp-item-desc">Executed JMeter performance tests and OWASP-based security assessments, ensuring production readiness under high load and hardening systems against known vulnerabilities.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements" style="background: var(--paper); padding: 100px 3rem;">
+  <div class="section-label">Recognition</div>
+  <h2>Achievements &amp; Speaking</h2>
+  <div style="display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); margin-top: 3rem;">
+
+    <div class="reveal" style="background: var(--paper); padding: 2.5rem;">
+      <div style="font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent2); margin-bottom: 1rem;">Microsoft · Feb 2026</div>
+      <div style="font-family: var(--font-disp); font-size: 20px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.75rem; line-height: 1.2;">Azure Solutions<br>Architect Expert</div>
+      <div style="font-size: 13px; color: var(--ink2); line-height: 1.6; margin-bottom: 1.2rem;">Highest-level Azure architecture certification. Signed by Satya Narayana Nadella. Credential: A3AE6849123BB05B.</div>
+      <div style="display: inline-block; font-family: var(--font-mono); font-size: 10px; padding: 4px 10px; background: var(--ink); color: var(--paper); letter-spacing: 0.06em;">MICROSOFT CERTIFIED EXPERT</div>
+    </div>
+
+    <div class="reveal" style="background: var(--paper); padding: 2.5rem;">
+      <div style="font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent2); margin-bottom: 1rem;">Agile Testing Alliance · Nov–Dec 2025</div>
+      <div style="font-family: var(--font-disp); font-size: 20px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.75rem; line-height: 1.2;">Speaker at Global<br>Testing Retreat</div>
+      <div style="font-size: 13px; color: var(--ink2); line-height: 1.6; margin-bottom: 1.2rem;">#ATAGTR2025 10th Anniversary. Virtual (22–23 Nov) and in-person Pune (14 Dec 2025). Organized by Agile Testing Alliance, CP-SAT &amp; WSA.</div>
+      <div style="display: inline-block; font-family: var(--font-mono); font-size: 10px; padding: 4px 10px; background: var(--accent); color: var(--paper); letter-spacing: 0.06em;">CERTIFICATE OF HONOR</div>
+    </div>
+
+    <div class="reveal" style="background: var(--paper); padding: 2.5rem;">
+      <div style="font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent2); margin-bottom: 1rem;">Credmark · Sep 2025</div>
+      <div style="font-family: var(--font-disp); font-size: 20px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.75rem; line-height: 1.2;">Top 10%<br>Playwright Globally</div>
+      <div style="font-size: 13px; color: var(--ink2); line-height: 1.6; margin-bottom: 1.2rem;">Ranked in the top 10% of all Playwright practitioners worldwide on Credmark's independent skill assessment. Badge: CM-2509-XW0TOAB.</div>
+      <div style="display: inline-block; font-family: var(--font-mono); font-size: 10px; padding: 4px 10px; background: var(--gold); color: var(--ink); letter-spacing: 0.06em;">TOP 10% WORLDWIDE</div>
+    </div>
+
+  </div>
+
+  <div class="reveal" style="margin-top: 1px; background: var(--ink); padding: 2.5rem; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap;">
+    <div>
+      <div style="font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(247,245,240,0.4); margin-bottom: 0.75rem;">YouTube Channel</div>
+      <div style="font-family: var(--font-disp); font-size: 24px; font-weight: 700; color: var(--paper); letter-spacing: -0.02em; margin-bottom: 0.5rem;">QA Automation &amp; Playwright Tutorials</div>
+      <div style="font-size: 14px; color: rgba(247,245,240,0.6); max-width: 560px;">Sharing knowledge on Playwright, Tosca, AI Testing, and QA Architecture. Practical tutorials for automation engineers and QA leaders.</div>
+    </div>
+    <a href="https://www.youtube.com/playlist/PLiUZog8eJ3L625AL1TLkZ7xWOsvK7AKre" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 10px; padding: 14px 24px; background: #ff0000; color: #fff; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; white-space: nowrap; flex-shrink: 0;">▶ Watch on YouTube</a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-label">Background</div>
+  <h2>About Me</h2>
+  <div class="about-grid">
+    <div class="about-text reveal">
+      <p>Strategic and results-oriented QA Automation Architect with over 9 years of extensive experience designing, architecting, and implementing robust test automation frameworks across diverse platforms.</p>
+      <p>My expertise spans Healthcare, IoT, Recruitment, Blockchain, and Enterprise domains. Proficient in driving end-to-end test automation within Azure DevOps CI/CD pipelines, ensuring high-quality software delivery in agile and DevOps ecosystems.</p>
+      <p>Committed to advancing quality engineering through innovation — from traditional Selenium frameworks to modern AI-driven testing using Playwright MCP and Local LLMs. Currently open to QA Architect roles, remote consulting, and automation transformation initiatives.</p>
+      <a href="#contact" class="btn-primary" style="margin-top:1rem; display:inline-block;">Let's Talk</a>
+    </div>
+    <div class="about-certs reveal">
+      <div style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink3); margin-bottom: 1rem;">Licenses &amp; Certifications</div>
+
+      <div class="cert-card">
+        <div class="cert-badge">Microsoft</div>
+        <div class="cert-name">Azure Solutions Architect Expert<br><span style="font-size:11px;color:var(--ink3);font-family:var(--font-mono);">Issued Feb 2026 · Expires Feb 2027</span></div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-badge">Microsoft</div>
+        <div class="cert-name">Azure Administrator Associate (AZ-104)<br><span style="font-size:11px;color:var(--ink3);font-family:var(--font-mono);">Issued Mar 2025 · Expires Mar 2027</span></div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-badge">Microsoft</div>
+        <div class="cert-name">Azure Developer Associate (AZ-204)<br><span style="font-size:11px;color:var(--ink3);font-family:var(--font-mono);">Issued Jun 2025 · Expires Jun 2027</span></div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-badge" style="background:#1a3cff;color:#fff;">AGILE</div>
+        <div class="cert-name">ATAGTR2025 #VirtualConferenceDays — Speaker<br><span style="font-size:11px;color:var(--ink3);font-family:var(--font-mono);">Agile Testing Alliance · Issued Oct 2025</span></div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-badge">Tricentis</div>
+        <div class="cert-name">Tosca Automation Specialist Levels 1 &amp; 2 (AS1, AS2)</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-badge">Tricentis</div>
+        <div class="cert-name">Tosca Automation Engineer Level 1 (AE1)</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-badge">Tricentis</div>
+        <div class="cert-name">Test Design Specialist Levels 1 &amp; 2 (TD1, TD2)</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-badge">Mobile</div>
+        <div class="cert-name">Appium Mobile Testing (Android/iOS)</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-badge">Selenium</div>
+        <div class="cert-name">Selenium Grid Architecture — Deployment &amp; Configuration</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-label">Let's Connect</div>
+  <h2>Open for Opportunities</h2>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <p>Available for QA Architect roles, remote consulting, automation framework audits, and strategic quality engineering partnerships.</p>
+      <div class="contact-links">
+        <a href="https://www.linkedin.com/in/p-avinash-sharma-8b0203b9/" target="_blank" rel="noopener" class="contact-link">
+          <div class="contact-link-icon">in</div>
+          LinkedIn — /p-avinash-sharma
+        </a>
+        <a href="mailto:your-email@example.com" class="contact-link">
+          <div class="contact-link-icon">@</div>
+          your-email@example.com
+        </a>
+        <a href="#" class="contact-link">
+          <div class="contact-link-icon">gh</div>
+          GitHub Portfolio (coming soon)
+        </a>
+        <a href="#" class="contact-link">
+          <div class="contact-link-icon">📍</div>
+          Bhopal, India · Remote Ready
+        </a>
+      </div>
+    </div>
+    <div class="contact-form-area reveal">
+      <p>Ready to build the <span>next-gen QA</span> architecture for your product?</p>
+      <div class="avail-badge">
+        <div class="avail-dot"></div>
+        Available for new projects
+      </div>
+      <br><br>
+      <a href="mailto:your-email@example.com" class="btn-primary" style="display:inline-block; border: 1px solid rgba(247,245,240,0.2); background: rgba(247,245,240,0.08); color: var(--paper); font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; padding: 16px 32px; text-decoration: none;">Send a Message ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-copy">© 2026 Pushanshu Avinash Sharma. All rights reserved.</div>
+  <div class="footer-copy">QA Automation Architect · Bhopal, India</div>
+</footer>
+
+<script>
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach((e) => {
+    if (e.isIntersecting) {
+      const siblings = [...e.target.parentElement.querySelectorAll('.reveal')];
+      const delay = siblings.indexOf(e.target) * 80;
+      setTimeout(() => e.target.classList.add('visible'), delay);
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+reveals.forEach(r => observer.observe(r));
+</script>
+</body>
+</html>
